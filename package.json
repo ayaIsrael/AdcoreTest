@@ -1,0 +1,14 @@
+{
+  "name": "cron_scheduler",
+  "version": "1.0.0",
+  "description": "A configurable Cron scheduler",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Aya Israel",
+  "license": "MIT",
+  "dependencies": {
+    "node-cron": "^3.0.0"
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    
+    </head>
+
+    <title> Table with database </title>
+
+    <body>
+        <table>
+            <tr> 
+                <th>ID</th>
+                <th>name</th>
+                <th>description</th>
+                <th>parent</th>
+                <th>R_O</th>
+            </tr>
+          <?php
+          $conn = mysql_connect("localhost", "root", "", "Adcore_data");
+          if ($conn -> connect_error){
+              die("Connection failed: ".$cron-> connect_error);
+          }
+
+          $sql = "SELECT ID, Name, Description, Parent, R_O from Adcore_data";
+          $result = $cron -> query($sql);
+          if ($result -> num_rows > 0){
+              while ($row = $result -> fetch_assoc()){
+                echo "<tr><td>".$row["id"]. "</td><td>".$row["name"]."</td><td>".
+                    $row["description"]."</td><td>".$row["parent"]."</td><td>".
+                        $row["R_O"]."</td><td>";
+            }
+            echo "</table>";
+          }
+          else {
+              echo "0 result";
+          }
+          $conn-> close();
+          ?>  
+         
+        </table>
+
+    </body>
+</html>
